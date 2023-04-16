@@ -18,15 +18,15 @@ Created on 3 Nov 2015
 import pytest
 
 def no_duplicates(a_string):
-    pass
-
+    temp = [s.count(char) for char in s]
+    # {(char, s.count(char)) for char in s}
+    return not any(list(map(lambda x: x > 1, temp)))
 
 def reversed_words(a_string):
-    pass
-
+    return list(reversed(a_string.split()))
 
 def four_char_strings(a_string):
-    pass
+    return [s[i:i+4] for i in range(0, len(s), 4)]
 
 
 def test_no_duplicates():

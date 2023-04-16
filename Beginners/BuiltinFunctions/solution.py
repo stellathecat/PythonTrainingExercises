@@ -65,7 +65,8 @@ def list_to_sequence_dict():
     x = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
     d = {}
     for index, value in enumerate(x):
-        d[index] = value
+        # d[index] = value
+        d[value] = index
     return d
 
 def is_same(a, b):

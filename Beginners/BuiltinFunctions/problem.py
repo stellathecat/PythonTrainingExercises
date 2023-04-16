@@ -46,18 +46,19 @@ import pytest
 
 def create_sequence(N):
     """Create the 3x table up to and including N."""
-    # Your code here
-    pass
+    return list(range(0, N+1, 3))
+    # pass
 
 def range_of_list():
     """Return the difference between the largest and smallest values in a list."""
     x = [4, 3, -9, 21, 0]
-    # Your code here
+    return max(x)-min(x)
 
 def range_of_list_abs():
     """Return the difference between the largest and smallest absolute values in a list."""
     x = [4, 3, -9, 21, 0]
-    # Your code here
+    x = list(map(abs, x))
+    return max(x)-min(x)
 
 def list_to_sequence_dict():
     """Create a dictionary where the key is the ordinal of the object in the list
@@ -69,8 +70,7 @@ def list_to_sequence_dict():
 
 def is_same(a, b):
     """Return True is the two items are the same."""
-    # Your code here
-    pass
+    a == b
 
 #=========== Tests ===================
 def test_create_sequence():

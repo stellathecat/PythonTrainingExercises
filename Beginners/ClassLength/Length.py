@@ -27,7 +27,7 @@ Created on Sep 12, 2011
 @author: paulross
 """
 
-__author__  = 'Paul Ross'
+__author__  = 'Paul Ross' # data hiding is achieved 
 __date__    = '2011-08-03'
 __version__ = '0.1.0'
 __rights__ = 'Copyright (c) 2011 Paul Ross. Copyright (c) 2015 AHL.'
@@ -43,10 +43,10 @@ class Length(object):
     metres."""
     
     def __init__(self, theValue):
-        pass
+        self.value = theValue
         
     def __str__(self):
-        pass
+        return 'Length: '+format(12.5, ".3f")+' (m)'
     
     def convert(self, uom):
         """Returns the value in the specified units of measure."""

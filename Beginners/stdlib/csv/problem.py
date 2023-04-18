@@ -18,9 +18,16 @@ import csv
 import pytest
 
 def read_csv(file_name='data.csv'):
-    """Returns a list of dicts from a csv file."""
-    # Your code goes here
-    pass
+    import pandas as pd
+    df = pd.read_csv('/Users/fd/Documents/GitHub/PythonTrainingExercises/Beginners/stdlib/csv/data.csv')
+    # df.columns
+    df['Ordinal'] = df['Ordinal'].astype("string")
+    # a = df.iloc[1,]
+    # a.to_string()
+    # list(a.items())
+    # a[::-1]
+    # [df.iloc[i,::-1].to_dict() for i in range(df.shape[0])]
+    return [df.iloc[i,::-1].to_dict() for i in range(df.shape[0])]
 
 def test_read_csv():
     expected = [

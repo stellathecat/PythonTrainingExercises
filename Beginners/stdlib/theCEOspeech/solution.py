@@ -68,13 +68,18 @@ def write_speech(n):
     """Write a speech with the opening words followed by n random phrases
     interspersed with random inserts."""
     phrases = OPENING_WORDS
+    # phrases.extend([get_insert()])
+    # append() adds all argument as a single element to the end of a list 
+    # whereas extend() iterates over the argument and 
+    # add each element of argument at the end of the list. 
     while n:
-        phrases.extend(get_phrase())
+        phrases.extend(get_phrase()) # F: will modify the object
         if n > 1:
             phrases.append(get_insert())
         n -= 1
+        print(n) # F
     text = ' '.join(phrases) + '.'
-    print textwrap.fill(text)
+    print(textwrap.fill(text))
 
 if __name__ == '__main__':
     write_speech(40)

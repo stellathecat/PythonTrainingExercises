@@ -35,11 +35,26 @@ import sys
 
 import pytest
 
+# felix
+a = [1,-2, 3,-4]
+b = list(map(lambda x: x > 0, a))
+import numpy as np
+c = np.where(b)[0]
+f = [a[i] for i in c]
+
+list(filter(lambda x: x > 0, [1,-2, 3,-4]))
 
 def _filter(fn, iterable):
     # Your code here
     pass
 
+
+list(map(lambda x: x.upper(), 'abcdef'))
+
+for i in 'abcdef':
+    print(i)
+
+[i.upper() for i in 'abcdef']
 
 def _map(fn, iterable):
     # Your code here

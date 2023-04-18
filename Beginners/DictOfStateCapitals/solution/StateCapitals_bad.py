@@ -85,10 +85,13 @@ def all_capitals():
     return STATES_CAPITALS.values()
 
 def states_capitals_string():
-    l = []
+    # k = "Georgia"
+    # '%s -> %s' % (k, STATES_CAPITALS[k])
+    # The "%" operator is used to format a set of variables enclosed in a "tuple" (a fixed size list), together with a format string
+    l = [] # = list
     for k in sorted(STATES_CAPITALS.keys()):
         l.append('%s -> %s' % (k, STATES_CAPITALS[k]))
-    return ', '.join(l)
+    return ', '.join(l) # = string
 
 def get_state(capital):
     """A bad solution in that every time we search most of the dictionary.

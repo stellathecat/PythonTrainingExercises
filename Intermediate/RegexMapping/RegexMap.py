@@ -34,8 +34,13 @@ def matchLines(theLineS):
     If the line is all digits then divide it by 2.
     If the line is all non-digits then make it lower case.
     Other lines are represented by None."""
+
+    # re.findall("\D", theLineS[0])
+    # re.findall("\d", theLineS[0])
+
     result = []
     for l in theLineS:
+        print(l)
         # Your code goes here
         pass
     return result
@@ -48,6 +53,7 @@ ABCDEFGH
 Hello world
 42"""
     result = matchLines(text.split('\n'))
+    # theLineS = text.split('\n')
     print result
 
 if __name__ == '__main__':

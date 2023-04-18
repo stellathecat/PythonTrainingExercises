@@ -5,13 +5,23 @@ Created on 17 Feb 2016
 
 @author: paulross
 """
+from calendar import weekday
 import datetime
 
 import pytest
 
 def business_days(start_date, num):
-    # Your code goes here
-    pass
+    test = start_date # datetime.date(2016, 1, 1)
+    # weekday(test)
+    # test.weekday()
+    a = [test + datetime.timedelta(days=i) for i in range(num*2)]
+    # list(map(lambda x: x.weekday() == 1, a))
+    b = list(map(lambda x: x.weekday() in (5,6), a))
+    c = []
+    for i in range(num*2):
+        if b[i] == False: 
+            c.append(a[i])
+    return c[:num]
 
 
 def test_business_days():
@@ -19,7 +29,9 @@ def test_business_days():
     result = business_days(start_date, 10)
     expected = [
         datetime.date(2016, 1, 1),
-        datetime.date(2016, 1, 4),
+        datetime.date(2016, 1, 4), 
+        # datetime.date(2016, 1, 4).isoweekday() # Monday is 1 
+        # datetime.date(2016, 1, 4).strftime('%A'))
         datetime.date(2016, 1, 5),
         datetime.date(2016, 1, 6),
         datetime.date(2016, 1, 7),

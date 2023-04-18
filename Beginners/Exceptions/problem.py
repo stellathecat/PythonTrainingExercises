@@ -28,12 +28,16 @@ Created on 3 Jan 2017
 
 @author: paulross
 '''
+from wsgiref.types import InputStream
 import pytest
 
 #==== Exercise 1:
 def raise_if_not_length_four(value):
-    # Your code goes here
-    return value
+    if not len(value) == 4:
+        raise ValueError('HITLER')
+        # "HITLER {:.2f}".format(4.2342542)
+    else:
+        return value
 
 def test_raise_if_not_length_four():
     assert raise_if_not_length_four('ABCD') == 'ABCD'
@@ -47,6 +51,7 @@ def test_raise_if_not_length_four_raises_ValueError():
 #==== Exercise 2:
 def raise_if_not_four_characters(value):
     # Your code goes here
+    raise TypeError
     return value
 
 def test_raise_if_not_four_characters():

@@ -76,24 +76,37 @@ STATES_CAPITALS = {
 
 
 def capital_of_Idaho():
-    # Your code here
-    pass
+    return STATES_CAPITALS['Idaho']
 
 def all_states():
-    # Your code here
-    pass
+    for i in STATES_CAPITALS.keys():
+        print(i)
 
 def all_capitals():
-    # Your code here
-    pass
+    for i in STATES_CAPITALS.values():
+        print(i)
 
 def states_capitals_string():
-    # Your code here
-    pass
+    import pandas
+    xx = pandas.concat([pandas.Series(STATES_CAPITALS.keys()), 
+                        pandas.Series(STATES_CAPITALS.values())], axis=1)
+    xx.columns = ['Fritz','Box']
+    # xx.iterrows()
+    # xx.index
+    # xxx = xx.iloc[3,] # xxx.shape
+    
+    xxx = xx['Fritz'] + " -> " + xx["Box"] # Series
+    # " ".join(xxx)
 
+    # for keys, values in STATES_CAPITALS:
+    #    print(keys)
+    # Your code here
+    return list(xxx)
 
 
 def get_state(capital):
+    # for i, v in STATES_CAPITALS.items():
+    #    print(i + " -> " + v)
     pass
 
 

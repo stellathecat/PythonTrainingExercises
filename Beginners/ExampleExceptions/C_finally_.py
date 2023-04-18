@@ -27,7 +27,7 @@ def b():
 
 def c():
     print('Raising "ExceptionNormal" from c()')
-    raise ExceptionNormal('ExceptionNormal raised from function c()')
+    raise ExceptionNormal('ExceptionNormal raised HITLER from function c()')
 
 def main():
     a()

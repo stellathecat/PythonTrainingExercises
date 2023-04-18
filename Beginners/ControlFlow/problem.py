@@ -5,7 +5,14 @@ Write a function 'what_sign' which returns 'Positive' 'Zero' or 'Negative' when 
 
 def what_sign(n):
     # Your code goes here
-    pass
+    import numpy
+    m = numpy.sign(n)
+    if m == 1:
+        return 'Positive'
+    elif m == -1:
+        return 'Negative'
+    else:
+        return 'Zero'
 
 
 def test_what_sign():
@@ -21,8 +28,16 @@ For numbers which are multiples of both three and five print "FizzBuzz".
 """
 
 def fizzbuzz():
-    # Your code goes here
-    pass
+    n = list(range(1, 101, 1))
+    for i in n:
+        if (i % 3 == 0) & (i % 5 == 0):
+            print('fizzbuzz')
+        elif i % 3 == 0:
+            print('fizz')
+        elif i % 5 == 0:
+            print('buzz') 
+        else:
+            print(i)   
 
 """
 Write a function which removes one or more indicies from a list.
@@ -36,8 +51,13 @@ the resulting list will be:
 """
 
 def remove_indices(mylist, idxs):
-    # Your code goes here
-    pass
+    # mylist.pop(1)
+    # del mylist[idxs]
+    # Using slices means defining a combination of integers that pinpoint the start-point, end-point and step size, returning a sub-list of the original list.
+    for i in sorted(idxs, reverse=True):
+        # print(i)
+        del mylist[i] # das geht nicht weil mylist neu erstellt wird
+    return mylist
 
 def test_remove_indices():
     assert remove_indices(["John", "Bob", "Charles", "Trev"], [0]) == ["Bob", "Charles", "Trev"]
@@ -59,6 +79,7 @@ def connect():
     # You might need to modify the arguments passed to connect() such as
     # how many times the caller wants to try to make a connection before
     # giving up.
+    
     return open_connection()
 
 def test_connect():

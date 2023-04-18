@@ -28,6 +28,7 @@ Created on 3 Jan 2017
 
 @author: paulross
 '''
+from ast import Str
 import pytest
 
 #==== Exercise 1:
@@ -47,10 +48,13 @@ def test_raise_if_not_length_four_raises_ValueError():
 
 #==== Exercise 2:
 def raise_if_not_four_characters(value):
+    # format(type(0).__name__, "%s") # geht nicht
+    # a = type(0).__name__
+    # 'Argunot {:s}'.format(a)
+    if not isinstance(value, str):
+        raise TypeError('Argument must be a string, not ' + str(type(value)))
     if len(value) != 4:
         raise ValueError('Argument must be length 4, not {:d}'.format(len(value)))
-    if not isinstance(value, basestring):
-        raise TypeError('Argument must be a string, not {:s}'.format(type(value)))
     return value
 
 def test_raise_if_not_four_characters():

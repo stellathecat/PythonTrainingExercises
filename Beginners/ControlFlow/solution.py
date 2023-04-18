@@ -30,7 +30,7 @@ def fizzbuzz():
             msg += 'Fizz'
         if num % 5 == 0:
             msg += 'Buzz'
-        if not msg:
+        if not msg: # also empty
             msg = str(num)
         print msg
 
@@ -49,6 +49,8 @@ the resulting list will be:
 def remove_indices(mylist, idxs):
     result = []
     for i, l in enumerate(mylist):
+        print(i)
+        print(l)
         if i not in idxs:
             result.append(l)
     return result
@@ -73,11 +75,13 @@ def open_connection():
 
 def connect(nretry=100):
     for _ in range(nretry):
+        print(_)
         try:
             if open_connection():
                 return True
         except ValueError:
-            continue
+            pass # continue # geht beides
+        # How to Use Pass, Continue and Break in Python
     return False
 
 def test_connect():

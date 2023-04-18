@@ -11,19 +11,19 @@ __date__    = '2011-08-03'
 __version__ = '0.1.0'
 __rights__  = 'Copyright (c) 2011 Paul Ross.'
 
-import pprint
+import pprint # pprint — Data pretty printer 
 
 #########################
 # With keyword arguments.
 #########################
 def cheeseshop(kind, *args, **kwargs):
-    print "-- Do you have any", kind, "?"
-    print " *args ".center(40, '-')
-    pprint.pprint(args)
-    print " *args ".center(40, '-')
-    print " *kwargs ".center(40, '-')
-    pprint.pprint(kwargs)
-    print " *kwargs ".center(40, '-')
+    print("-- Do you have any", kind, "?")
+    print(" *args ".center(40, '-'))
+    pprint.pprint(args) # no args
+    print(" *args ".center(40, '-'))
+    print(" *kwargs ".center(40, '-'))
+    pprint.pprint(kwargs) 
+    print(" *kwargs ".center(40, '-'))
 
 def main():
     cheeseshop(

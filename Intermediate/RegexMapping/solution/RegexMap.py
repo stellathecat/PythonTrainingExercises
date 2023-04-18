@@ -60,7 +60,7 @@ RE_OPTIONS = (
     (re.compile(r'^(\d+)$'), digits),
     (re.compile(r'^(\D+)$'), letters),
 )
-
+# test = RE_OPTIONS[0] # this is also a tuple
 
 def matchLines(theLineS):
     """Given a list of lines return a list of objects:

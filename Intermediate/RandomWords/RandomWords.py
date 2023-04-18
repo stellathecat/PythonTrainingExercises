@@ -29,14 +29,21 @@ Created on 26 Feb 2015
 @author: paulross
 """
 import random
+# ''.join(random.sample('fritz', len('fritz')))
+# a = list('fritz')
+# random.shuffle(a)
 
 def randomWords(words, n):
-    pass
+    # a = "fritz"
+    # random.sample()
+    # "".join([a[:n], "".join(random.sample(a[n:], len(a[n:])))])
+    asd = map(lambda x: "".join([x[:n], "".join(random.sample(x[n:], len(x[n:])))]), words)
+    return list(asd)
 
 def main():
     # Loop round until the user just gives a <cr> i.e. enter response.
     while True:
-        line = raw_input('Words please, <cr> to exit: ')
+        line = input('Words please, <cr> to exit: ')
         words = line.split()
         if len(words) == 0:
             # User wants to quit

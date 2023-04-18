@@ -92,6 +92,8 @@ def states_capitals_string():
 # Pre-compute the reverse lookup, this is done a module import time
 # What can go wrong here? - duplicates
 CAPITALS_STATES = {v : k for k, v in STATES_CAPITALS.items()}
+# This is the general template you can follow for dictionary comprehension in Python:
+# dict_variable = {key:value for (key,value) in dictonary.items()}
 
 def get_state(capital):
     """A better solution in that we have pre-compute the reverse lookup and

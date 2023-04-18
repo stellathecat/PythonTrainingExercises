@@ -21,6 +21,7 @@ def defaultMutableCatch(a=[1,]):
 x = [1,]
 
 def defaultMutableFix(a=x):
+    # wo ist das gespeichert? das a?
     if a is None:
         a = []
     a.append('Ooops')
